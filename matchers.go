@@ -42,7 +42,7 @@ func Not(m Matcher) Matcher {
 func isBool(expected bool, actual interface{}) (bool, string) {
     switch a := actual.(type) {
         case bool:
-            return a == expected, fmt.Sprintf("'%v' was expected, but got %v", expected, a)
+            return a == expected, fmt.Sprintf("'%v' was expected, but got '%v'", expected, a)
     }
     return false, fmt.Sprintf("'%v' was expected, but got non-boolean of type %s", expected, reflect.TypeOf(actual).Name())
 }
